@@ -20,6 +20,7 @@ submission/
 cfg/
 models/
 backup/
+results/
 darknet
 .fuse*
 
