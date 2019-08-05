@@ -150,12 +150,19 @@ if __name__ == "__main__":
     #r = classify(net, meta, im)
     #print r[:10]
 
+    # COCO
     model_weights = "yolov3-tiny-train_400000.weights" #"yolov3-tiny.weights"
-
     net = load_net(b"cfg/yolov3-tiny.cfg", bytes(model_weights, encoding='utf-8'), 0)
     meta = load_meta(b"cfg/coco.data")
-
     image_pth = "data/dog.jpg"
+
+    # WIDER_FACE
+    #model_weights = "/home/ubuntu/yolo-v3/backup_wider/yolov3-tiny-wider-train_final.weights"
+    #net = load_net(b"cfg/yolov3-tiny-wider-test.cfg", bytes(model_weights, encoding='utf-8'), 0)
+    #meta = load_meta(b"cfg/wider-train.data")
+    #image_pth = "data/dog.jpg"
+
+
     img = cv2.imread(image_pth)
 
     detections = detect(net, meta,  bytes(image_pth, encoding='utf-8') )
